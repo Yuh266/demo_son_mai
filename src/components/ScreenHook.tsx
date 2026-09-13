@@ -104,12 +104,12 @@ export const ScreenHook: React.FC<ScreenHookProps> = ({ onExplore, isActive = tr
           alt="Chiếc hộp sơn mài nhiều lớp sắc"
           fill
           priority
-          className={`object-cover object-right sm:object-center transition-all duration-1200 ease-out ${
+          className={`object-cover object-[75%_25%] md:object-right transition-all duration-1200 ease-out ${
             isActive ? "scale-100 opacity-100" : "scale-105 opacity-80"
           }`}
         />
-        {/* Lớp gradient tối mềm mại nửa bên trái để chữ nổi bật thanh lịch */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-transparent pointer-events-none" />
+        {/* Lớp gradient thích ứng: trên mobile phủ tối mềm phần dưới để lộ rõ chiếc hộp tuyệt đẹp phía trên */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent md:bg-gradient-to-r md:from-black/90 md:via-black/55 md:to-transparent pointer-events-none" />
       </div>
 
       {/* 2. Hiệu ứng hạt bụi vàng lơ lửng */}
@@ -118,34 +118,34 @@ export const ScreenHook: React.FC<ScreenHookProps> = ({ onExplore, isActive = tr
         className="absolute inset-0 z-10 pointer-events-none"
       />
 
-      {/* 3. Khối nội dung bên trái được đẩy sang phải 1 tí, phóng to cỡ chữ và thêm animation lướt vào */}
-      <div className="relative z-20 w-full lg:w-[55%] xl:w-[52%] h-full flex flex-col justify-center px-8 sm:px-14 lg:pl-24 xl:pl-32 2xl:pl-40 lg:pr-8 py-12">
-        <div className="max-w-xl space-y-8 lg:space-y-10">
-          {/* Tiêu đề chính 4 dòng lớn, uy nghi với hiệu ứng so le (Staggered Fade-in) */}
+      {/* 3. Khối nội dung bên trái đa thiết bị */}
+      <div className="relative z-20 w-full md:w-[65%] lg:w-[58%] xl:w-[52%] 2xl:w-[48%] h-full flex flex-col justify-end md:justify-center px-6 sm:px-10 md:px-12 lg:pl-16 xl:pl-26 2xl:pl-36 lg:pr-6 pt-12 pb-16 sm:pb-12">
+        <div className="w-full max-w-xl 2xl:max-w-2xl space-y-5 sm:space-y-7 lg:space-y-10">
+          {/* Tiêu đề chính 4 dòng co giãn linh hoạt */}
           <div className="space-y-1 sm:space-y-2">
             <h2
-              className={`text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] font-serif tracking-[0.14em] text-[#EDE6DC] font-normal uppercase leading-[1.08] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] delay-100 ${
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] xl:text-[4rem] 2xl:text-[4.6rem] font-serif tracking-[0.08em] sm:tracking-[0.11em] lg:tracking-[0.14em] text-[#EDE6DC] font-normal uppercase leading-[1.08] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] delay-100 ${
                 isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               MỘT CHIẾC
             </h2>
             <h2
-              className={`text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] font-serif tracking-[0.14em] text-[#EDE6DC] font-normal uppercase leading-[1.08] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] delay-250 ${
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] xl:text-[4rem] 2xl:text-[4.6rem] font-serif tracking-[0.08em] sm:tracking-[0.11em] lg:tracking-[0.14em] text-[#EDE6DC] font-normal uppercase leading-[1.08] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] delay-250 ${
                 isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               HỘP.
             </h2>
             <h2
-              className={`text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] font-serif tracking-[0.14em] text-[#EDE6DC] font-normal uppercase leading-[1.08] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] delay-400 ${
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] xl:text-[4rem] 2xl:text-[4.6rem] font-serif tracking-[0.08em] sm:tracking-[0.11em] lg:tracking-[0.14em] text-[#EDE6DC] font-normal uppercase leading-[1.08] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] delay-400 ${
                 isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               NHIỀU LỚP
             </h2>
             <h2
-              className={`text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] font-serif tracking-[0.14em] text-[#EDE6DC] font-normal uppercase leading-[1.08] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] delay-550 ${
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] xl:text-[4rem] 2xl:text-[4.6rem] font-serif tracking-[0.08em] sm:tracking-[0.11em] lg:tracking-[0.14em] text-[#EDE6DC] font-normal uppercase leading-[1.08] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] delay-550 ${
                 isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
@@ -155,11 +155,11 @@ export const ScreenHook: React.FC<ScreenHookProps> = ({ onExplore, isActive = tr
 
           {/* Câu hỏi gợi mở phóng to thanh tao */}
           <div
-            className={`space-y-1 pt-2 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] delay-700 ${
+            className={`space-y-1 pt-1 sm:pt-2 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] delay-700 ${
               isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <p className="text-xl sm:text-2xl md:text-2xl lg:text-[1.85rem] font-serif text-[#EDE6DC] font-light leading-snug">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[1.65rem] 2xl:text-[1.85rem] font-serif text-[#EDE6DC] font-light leading-snug">
               Nhưng để có được bề mặt này,
               <br />
               nó đã đi qua những gì?
@@ -168,18 +168,18 @@ export const ScreenHook: React.FC<ScreenHookProps> = ({ onExplore, isActive = tr
 
           {/* Nút KHÁM PHÁ dạng outline viền mảnh xuất hiện mượt mà */}
           <div
-            className={`pt-6 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] delay-900 ${
+            className={`pt-4 sm:pt-6 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] delay-900 ${
               isActive ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"
             }`}
           >
             <button
               onClick={onExplore}
-              className="inline-flex items-center gap-3.5 px-7 py-3 rounded-sm border border-white/30 hover:border-[#D4AF37] bg-black/45 hover:bg-[#1A1208]/80 backdrop-blur-md text-[#EDE6DC] hover:text-[#F3E5AB] transition-all duration-300 group cursor-pointer shadow-lg hover:shadow-[#D4AF37]/15"
+              className="inline-flex items-center gap-3 px-5 sm:px-7 py-2.5 sm:py-3 rounded-sm border border-white/30 hover:border-[#D4AF37] bg-black/45 hover:bg-[#1A1208]/80 backdrop-blur-md text-[#EDE6DC] hover:text-[#F3E5AB] transition-all duration-300 group cursor-pointer shadow-lg hover:shadow-[#D4AF37]/15"
             >
-              <span className="text-xs sm:text-sm font-serif tracking-[0.28em] uppercase font-light">
+              <span className="text-xs sm:text-sm font-serif tracking-[0.25em] sm:tracking-[0.28em] uppercase font-light">
                 KHÁM PHÁ
               </span>
-              <ArrowRight className="w-4 h-4 text-[#C8BFB2] group-hover:text-[#F3E5AB] group-hover:translate-x-1.5 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#C8BFB2] group-hover:text-[#F3E5AB] group-hover:translate-x-1.5 transition-transform" />
             </button>
           </div>
         </div>
